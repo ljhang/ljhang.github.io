@@ -120,4 +120,5 @@ theme: hexo-theme-matery
 ## GH_TOKEN: 6f6941a727c2b0095364c2df59632ffa951776e8
 deploy:
   type: 'git'
+  repo: git@github.com:ljhang/blog.git
   branch: gh-pages
