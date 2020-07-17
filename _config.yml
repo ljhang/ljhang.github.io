@@ -117,7 +117,7 @@ theme: hexo-theme-matery
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
-## GH_TOKEN: 09bdb75e0d1d41399ad38829e43a3854cfb035bd
+## GH_TOKEN: 6f6941a727c2b0095364c2df59632ffa951776e8
 deploy:
   type: 'git'
   branch: gh-pages
