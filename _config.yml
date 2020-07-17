@@ -13,8 +13,8 @@ timezone: 'Asia/Hong_Kong'
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://ljhang.github.io
-root: /
+url: https://ljhang.github.io/
+root: /blog/
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -120,5 +120,5 @@ theme: hexo-theme-matery
 # CI: 5f5c230dd31b948461027ec08c280e151efabf9f
 deploy:
   type: 'git'
-  # repo: git@github.com:ljhang/ljhang.github.io.git
+  # repo: https://github.com/ljhang/blog
   branch: gh-pages
