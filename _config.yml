@@ -117,8 +117,8 @@ theme: hexo-theme-matery
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
+# CI: 5f5c230dd31b948461027ec08c280e151efabf9f
 deploy:
   type: 'git'
-  repo: 
-    git@github.com:ljhang/ljhang.github.io.git
-  branch: master
+  # repo: git@github.com:ljhang/ljhang.github.io.git
+  branch: gh-pages
