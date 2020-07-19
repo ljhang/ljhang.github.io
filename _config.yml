@@ -3,8 +3,8 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 听风的歌
-subtitle: '听风的歌'
+title: 李五写字的地方
+subtitle: '花落因梦'
 description: '但愿我可以没成长，完全凭直觉觅对象'
 keywords:
 author: 李建航
@@ -13,7 +13,7 @@ timezone: 'Asia/Hong_Kong'
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://ljhang.github.io/
+url: https://ljhang.github.io/blog
 root: /blog/
 permalink: :year/:month/:day/:title/
 permalink_defaults:
