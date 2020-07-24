@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>Flutter学习之Provider</title>
+      <link href="/blog/2020/07/24/flutter-providers/"/>
+      <url>/blog/2020/07/24/flutter-providers/</url>
+      
+        <content type="html"><![CDATA[<h3 id="Flutter中几种状态管理Provider："><a href="#Flutter中几种状态管理Provider：" class="headerlink" title="Flutter中几种状态管理Provider："></a>Flutter中几种状态管理Provider：</h3><ul><li>Provider：基类；</li><li>ListenableProvider</li><li>ChangeNotifierProvider：监听其提供出去的模型对象中的更改。</li><li>ValueListenableProvider：可以监听列表值，并能暴露其当前值出去；</li><li>StreamProvider</li><li>FutureProvider</li><li>MultiProvider：嵌套Provider；</li><li>ProxyProvider：基于其他Providers上创建的Provider；</li></ul><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> Flutter </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Provider </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Flutter学习之Button</title>
+      <link href="/blog/2020/07/19/flutter-buttons/"/>
+      <url>/blog/2020/07/19/flutter-buttons/</url>
+      
+        <content type="html"><![CDATA[<p>Flutter中按钮很多样式，主要使用：</p><ul><li><code>MaterialButton</code>: 可以设置宽高值, Flutter 中所有按钮的基类</li><li><code>RaisedButton</code>:  凸起按钮，带阴影</li><li><code>OutlineButton</code>: 自带边框的按钮，不能设置背景色color</li><li><code>FlatButton</code>: 扁平按钮，不带阴影</li><li><code>IconButton</code>: 在 Icon 基础上加上点击事件，不能设置背景色和边框</li><li><code>FloatingActionButton</code>: 悬浮按钮</li></ul><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> Flutter </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Button </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Ubuntu服务器部署多个Flask应用</title>
+      <link href="/blog/2020/07/17/multi-flask-deploy/"/>
+      <url>/blog/2020/07/17/multi-flask-deploy/</url>
+      
+        <content type="html"><![CDATA[<p>[TOC]</p><h3 id="序"><a href="#序" class="headerlink" title="序"></a>序</h3><p>最近在学习Flask搞些小项目玩玩，故简单记录一下的学习之路。</p><h4 id="工具栈"><a href="#工具栈" class="headerlink" title="工具栈"></a>工具栈</h4><p>Ubuntu+Flask+uWSGI+Nginx+Supervisor<br>适用情况：单个服务器、单个域名</p><h4 id="选取方案"><a href="#选取方案" class="headerlink" title="选取方案"></a>选取方案</h4><p>部署多个Flask项目应用可以有两种情况吧：</p><ul><li>在Nginx配置中为不同的项目使用不同的二级域名，需要配置好二级域名；</li><li>在Nginx配置中为不同的项目配置不同的端口号作转发入口；<br>使用哪种好见仁见智，根据所需罢了。</li></ul><h3 id="Multi-Flask配置端口"><a href="#Multi-Flask配置端口" class="headerlink" title="Multi-Flask配置端口"></a>Multi-Flask配置端口</h3><h4 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h4><p>默认你已安装好<code>Flask</code>,<code>uWSGI</code>,<code>Nginx</code>,<code>Supervisor</code>。<br>创建好放置多个Flask项目的根文件夹，⚠️注意：最好不要使用<code>sudo</code>去创建<code>mkdir</code>.<br>这里的是在创建了projects文件夹作使用。</p><h4 id="多个简单的Flask应用"><a href="#多个简单的Flask应用" class="headerlink" title="多个简单的Flask应用"></a>多个简单的Flask应用</h4><p>创建多个Flask APP，简单即可。为不同项目配置好相应的虚拟环境。</p><ul><li><code>virtualenv --no-site-packages -p /usr/bin/python3 env</code> 指定了Python3</li><li><code>virtualenv env</code></li></ul><h4 id="uWSGI-ini"><a href="#uWSGI-ini" class="headerlink" title="uWSGI.ini"></a>uWSGI.ini</h4><p>在Flask工程中配置uWSGI.ini文件：</p><pre><code>[uwsgi]socket = 127.0.0.1:7001     # 指定端口号，和Nginx、Flask启动app.run()中一致plugins = python    # python版本chdir = /home/ubuntu/projects/tattoo    # 项目所在路径wsgi-file = manage.py   # 指定启动.py文件callable = app  # 全局启动变量home = /home/ubuntu/projects/tattoo/env     # 指定相应的环境变量mount = /tattoo=manage.py   # 挂载项目启动文件manage-script-name = true</code></pre><p>可以在当前Flask目录下启动测试：<code>uwsgi --ini uwsgi.ini</code></p><h4 id="Supervisor配置"><a href="#Supervisor配置" class="headerlink" title="Supervisor配置"></a>Supervisor配置</h4><pre><code>[program:tattoo]command = uwsgi --ini /home/ubuntu/projects/tattoo/uwsgi.inistopsignal=QUITautostart=trueautorestart=truestdout_logfile=/var/log/uwsgi/supervisor_tattoo.logstderr_logfile=/var/log/uwsgi/supervisor_tattoo_error.log</code></pre><h4 id="Nginx配置"><a href="#Nginx配置" class="headerlink" title="Nginx配置"></a>Nginx配置</h4><p>因为HTPPS原因，这里就配置了SSL，需要上传证书到服务器进行配置。如无需HTTPS，去除SSL相关的即可。</p><pre><code>server {        listen 443;        server_name  [你的域名];        charset      utf-8;        client_max_body_size 5M;        ssl_session_timeout 5m;        ssl on;        ssl_certificate     1_[你的域名]_bundle.crt;        ssl_certificate_key 2_[你的域名].key;        ssl_protocols TLSv1 TLSv1.1 TLSv1.2;        ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE;        ssl_prefer_server_ciphers on;        location / {                try_files $uri $uri/ = 404;        }        location = /favicon.ico {                log_not_found off;                access_log off;        }        location /paper {            include uwsgi_params;            uwsgi_pass 127.0.0.1:7000;            uwsgi_param UWSGI_PYTHON /home/ubuntu/projects/paper/env;            uwsgi_param UWSGI_CHDIR /home/ubuntu/projects/paper;            uwsgi_param UWSGI_SCRIPT manage:app;        }        location /tattoo {            include uwsgi_params;            uwsgi_pass 127.0.0.1:7001;            uwsgi_param UWSGI_PYTHON /home/ubuntu/projects/tattoo/env;            uwsgi_param UWSGI_CHDIR /home/ubuntu/projects/tattoo;            uwsgi_param UWSGI_SCRIPT manage:app;        }}</code></pre><h3 id="相关"><a href="#相关" class="headerlink" title="相关"></a>相关</h3><h4 id="virtualenv"><a href="#virtualenv" class="headerlink" title="virtualenv"></a>virtualenv</h4><p>使用<code>which python</code>或<code>which python3</code>查看Python版本安装位置。<br>创建虚拟环境指定Python版本：<code>virtualenv --no-site-packages -p /usr/bin/python3 env</code>或者<code>virtualenv env</code><br>激活虚拟环境：<code>source env/bin/activate</code><br>退出虚拟环境：<code>deactivate</code></p><ul><li>注意：创建虚拟环境的父文件夹<code>mkdir [文件夹]</code>时，最好不要使用sudo</li></ul><h4 id="requirements-txt"><a href="#requirements-txt" class="headerlink" title="requirements.txt"></a>requirements.txt</h4><p>生成：pip freeze &gt; requirements.txt<br>安装：pip install -r requirements.txt</p><h4 id="进程管理工具-supervisor"><a href="#进程管理工具-supervisor" class="headerlink" title="进程管理工具 supervisor"></a>进程管理工具 supervisor</h4><p>sudo supervisorctl reread<br>sudo supervisorctl update<br>sudo supervisorctl restart [项目配置名称]</p><h4 id="Nginx"><a href="#Nginx" class="headerlink" title="Nginx"></a>Nginx</h4><p>sudo nginx -s reload<br>sudo service nginx restart</p><h4 id="查看进程"><a href="#查看进程" class="headerlink" title="查看进程"></a>查看进程</h4><p>ps -ef | grep uwsgi</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> Python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Flask </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>天上人</title>
+      <link href="/blog/2015/07/28/tian-shang-ren/"/>
+      <url>/blog/2015/07/28/tian-shang-ren/</url>
+      
+        <content type="html"><![CDATA[<p>「谨以此怀念与我相处12载成长时光的姑丈。」</p><p>回忆和感情是不同的。回忆不像感情那般放得越久，会变得越醇，回忆放得久了会越来越模糊、就像镜子蒙上了擦拭不干净的尘。<br>回忆有时候是很痛苦的事，因为有的事情正在淡忘。</p><p>写了很多字，写不下去。再看回时，所有情景又跃然入目，心情很抑郁，每每如此。</p><p>2015年7月28日，事情却如此的突兀变化。<br>姑丈去世，心不知什么滋味，很不知所措，无限压抑，还有很难受很难受。所有的负面词语都不足以形容。</p><p>坐在车前段靠窗的位置上，望着非瞬即逝的窗外景物，我偷偷的留了好几次眼泪。我不知道在想些什么，不自觉的就闪过和姑丈的许多画面，里面有我、阿豪和姑一起生活的片段。有开心的，也有不开心的。</p><p>生命就这样戛然而止，葬礼是对这世间的告别。</p><p>见面的时候，我们之间隔着了棺板。看不到他的样子，也想象不到他的音容笑貌，思绪空空。棺木不能揭开来看了，见不到他的最后一面，哪怕他已经离开了这个世界。不知道他离去的时候是否痛苦，还是解脱。</p><p>我想他大概是解脱的吧。卧病多年了，瘫痪在床、视力听力消退，但他还是那么积极乐观。有时候我在想，在孤独无望黑暗中度过如此的岁月，是否会选择去结束生命这样一个结局。</p><p>2003.09 - 2015.06<br>生命的长河是多么迂回，而希望又是多么雄壮。</p><p>姑丈的离去对我而言意味着太多。一个人就这么从你的世界里离开，从这个缤纷繁华的世界消失，留下来的也许只有寥寥无几的照片和我脑海里定格的历史画面。他是我最亲近的人之一、他是我最敬重的人之一、他是我人生路上的引导者。</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 情感 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 怀缅 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>
