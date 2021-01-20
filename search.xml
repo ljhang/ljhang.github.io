@@ -4,48 +4,23 @@
   
     
     <entry>
-      <title>Flutter学习之Provider</title>
-      <link href="/blog/2020/07/24/flutter-providers/"/>
-      <url>/blog/2020/07/24/flutter-providers/</url>
+      <title>足球赔率之显示盘与玩法转换</title>
+      <link href="/blog/2021/01/20/odds-display-convert/"/>
+      <url>/blog/2021/01/20/odds-display-convert/</url>
       
-        <content type="html"><![CDATA[<h3 id="Flutter中几种状态管理Provider："><a href="#Flutter中几种状态管理Provider：" class="headerlink" title="Flutter中几种状态管理Provider："></a>Flutter中几种状态管理Provider：</h3><ul><li>Provider：基类；</li><li>ListenableProvider</li><li>ChangeNotifierProvider：监听其提供出去的模型对象中的更改。</li><li>ValueListenableProvider：可以监听列表值，并能暴露其当前值出去；</li><li>StreamProvider</li><li>FutureProvider</li><li>MultiProvider：嵌套Provider；</li><li>ProxyProvider：基于其他Providers上创建的Provider；</li></ul><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+        <content type="html"><![CDATA[<blockquote><p>此文章代码描述基于Flutter</p></blockquote><h3 id="让球-大小球-盘口得转换"><a href="#让球-大小球-盘口得转换" class="headerlink" title="让球/大小球-盘口得转换"></a>让球/大小球-盘口得转换</h3><ul><li>大小球的盘口仅用<code>/</code>表示，没有前缀；</li><li>亚赔的盘口一般都是<code>/</code>表示，类似<code>-2/2.5</code>或<code>+2/2.5</code>；</li><li>亚赔的盘口前缀也会有不同，常见让为<code>-</code>，受让为<code>+</code>；例如尼日利亚，就跟亚赔表示相反；也有有<code>*</code>表示让球的地区；</li></ul><h3 id="显示盘类型"><a href="#显示盘类型" class="headerlink" title="显示盘类型"></a>显示盘类型</h3><p>针对<code>赔率(水位)</code>数据有以下几种显示类型：</p><ul><li>小数式；</li><li>美式盘；</li><li>香港盘；</li><li>分数盘；</li><li>马来西亚盘；</li><li>印尼盘</li></ul><h3 id="玩法类型"><a href="#玩法类型" class="headerlink" title="玩法类型"></a>玩法类型</h3><ul><li>亚赔；</li><li>大小球；</li><li>欧赔（胜平负、1x2）；</li><li>双胜彩；</li><li>平局退款；</li><li>让分盘（欧洲盘）；</li><li>单双；</li><li>两队得分；</li></ul><h5 id="参考网站："><a href="#参考网站：" class="headerlink" title="参考网站："></a>参考网站：</h5><ul><li><a href="https://55555365.com/home/article/detail/id/488.html" target="_blank" rel="noopener">赔率转换表</a></li><li><a href="http://www.sp007.net/change.htm" target="_blank" rel="noopener">盘口换算表</a></li><li><a href="http://www.winasdog.cn/Tools/OddsConverter" target="_blank" rel="noopener">赔率转换器</a></li></ul><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
       
       
       <categories>
           
-          <category> Flutter </category>
+          <category> 赔率 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> Provider </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Flutter学习之Button</title>
-      <link href="/blog/2020/07/19/flutter-buttons/"/>
-      <url>/blog/2020/07/19/flutter-buttons/</url>
-      
-        <content type="html"><![CDATA[<p>Flutter中按钮很多样式，主要使用：</p><ul><li><code>MaterialButton</code>: 可以设置宽高值, Flutter 中所有按钮的基类</li><li><code>RaisedButton</code>:  凸起按钮，带阴影</li><li><code>OutlineButton</code>: 自带边框的按钮，不能设置背景色color</li><li><code>FlatButton</code>: 扁平按钮，不带阴影</li><li><code>IconButton</code>: 在 Icon 基础上加上点击事件，不能设置背景色和边框</li><li><code>FloatingActionButton</code>: 悬浮按钮</li></ul><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
-      
-      
-      <categories>
-          
-          <category> Flutter </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Button </tag>
+            <tag> 赔率-显示盘/玩法 </tag>
             
         </tags>
       

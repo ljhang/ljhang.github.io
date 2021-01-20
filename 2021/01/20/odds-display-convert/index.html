@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Button">
+    <meta name="keywords" content="足球赔率">
     <meta name="description" content="但愿我可以没成长，完全凭直觉觅对象">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Flutter学习之Button | 李五写字的地方</title>
+    <title>足球赔率之显示盘与玩法转换 | 李五写字的地方</title>
     <link rel="icon" type="image/png" href="/blog/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/blog/libs/awesome/css/all.css">
@@ -286,12 +286,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/blog/medias/featureimages/17.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/blog/medias/featureimages/12.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Flutter学习之Button</h1>
+                    <h1 class="description center-align post-title">足球赔率之显示盘与玩法转换</h1>
                 </div>
             </div>
         </div>
@@ -408,8 +408,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/blog/tags/Button/">
-                                <span class="chip bg-color">Button</span>
+                            <a href="/blog/tags/%E8%B5%94%E7%8E%87-%E6%98%BE%E7%A4%BA%E7%9B%98-%E7%8E%A9%E6%B3%95/">
+                                <span class="chip bg-color">赔率-显示盘/玩法</span>
                             </a>
                         
                     </div>
@@ -420,8 +420,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/blog/categories/Flutter/" class="post-category">
-                                Flutter
+                            <a href="/blog/categories/%E8%B5%94%E7%8E%87/" class="post-category">
+                                赔率
                             </a>
                         
                     </div>
@@ -433,7 +433,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-07-19
+                    2021-01-20
                 </div>
                 
 
@@ -442,7 +442,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    141
+                    244
                 </div>
                 
 
@@ -454,14 +454,37 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Flutter中按钮很多样式，主要使用：</p>
+                <blockquote>
+<p>此文章代码描述基于Flutter</p>
+</blockquote>
+<h3 id="让球-大小球-盘口得转换"><a href="#让球-大小球-盘口得转换" class="headerlink" title="让球/大小球-盘口得转换"></a>让球/大小球-盘口得转换</h3><ul>
+<li>大小球的盘口仅用<code>/</code>表示，没有前缀；</li>
+<li>亚赔的盘口一般都是<code>/</code>表示，类似<code>-2/2.5</code>或<code>+2/2.5</code>；</li>
+<li>亚赔的盘口前缀也会有不同，常见让为<code>-</code>，受让为<code>+</code>；例如尼日利亚，就跟亚赔表示相反；也有有<code>*</code>表示让球的地区；</li>
+</ul>
+<h3 id="显示盘类型"><a href="#显示盘类型" class="headerlink" title="显示盘类型"></a>显示盘类型</h3><p>针对<code>赔率(水位)</code>数据有以下几种显示类型：</p>
 <ul>
-<li><code>MaterialButton</code>: 可以设置宽高值, Flutter 中所有按钮的基类</li>
-<li><code>RaisedButton</code>:  凸起按钮，带阴影</li>
-<li><code>OutlineButton</code>: 自带边框的按钮，不能设置背景色color</li>
-<li><code>FlatButton</code>: 扁平按钮，不带阴影</li>
-<li><code>IconButton</code>: 在 Icon 基础上加上点击事件，不能设置背景色和边框</li>
-<li><code>FloatingActionButton</code>: 悬浮按钮</li>
+<li>小数式；</li>
+<li>美式盘；</li>
+<li>香港盘；</li>
+<li>分数盘；</li>
+<li>马来西亚盘；</li>
+<li>印尼盘</li>
+</ul>
+<h3 id="玩法类型"><a href="#玩法类型" class="headerlink" title="玩法类型"></a>玩法类型</h3><ul>
+<li>亚赔；</li>
+<li>大小球；</li>
+<li>欧赔（胜平负、1x2）；</li>
+<li>双胜彩；</li>
+<li>平局退款；</li>
+<li>让分盘（欧洲盘）；</li>
+<li>单双；</li>
+<li>两队得分；</li>
+</ul>
+<h5 id="参考网站："><a href="#参考网站：" class="headerlink" title="参考网站："></a>参考网站：</h5><ul>
+<li><a href="https://55555365.com/home/article/detail/id/488.html" target="_blank" rel="noopener">赔率转换表</a></li>
+<li><a href="http://www.sp007.net/change.htm" target="_blank" rel="noopener">盘口换算表</a></li>
+<li><a href="http://www.winasdog.cn/Tools/OddsConverter" target="_blank" rel="noopener">赔率转换器</a></li>
 </ul>
 <script>
         document.querySelectorAll('.github-emoji')
@@ -506,7 +529,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://ljhang.github.io/blog/blog/2020/07/19/flutter-buttons/">https://ljhang.github.io/blog/blog/2020/07/19/flutter-buttons/</a>
+                    <a href="https://ljhang.github.io/blog/blog/2021/01/20/odds-display-convert/">https://ljhang.github.io/blog/blog/2021/01/20/odds-display-convert/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -544,8 +567,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/blog/tags/Button/">
-                                    <span class="chip bg-color">Button</span>
+                                <a href="/blog/tags/%E8%B5%94%E7%8E%87-%E6%98%BE%E7%A4%BA%E7%9B%98-%E7%8E%A9%E6%B3%95/">
+                                    <span class="chip bg-color">赔率-显示盘/玩法</span>
                                 </a>
                             
                         </div>
@@ -713,50 +736,54 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/blog/2020/07/24/flutter-providers/">
+                <a href="/blog/2021/01/20/odds-display-convert/">
                     <div class="card-image">
                         
                         
-                        <img src="/blog/medias/featureimages/14.jpg" class="responsive-img" alt="Flutter学习之Provider">
+                        <img src="/blog/medias/featureimages/12.jpg" class="responsive-img" alt="足球赔率之显示盘与玩法转换">
                         
-                        <span class="card-title">Flutter学习之Provider</span>
+                        <span class="card-title">足球赔率之显示盘与玩法转换</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Flutter中几种状态管理Provider：
-Provider：基类；
-ListenableProvider
-ChangeNotifierProvider：监听其提供出去的模型对象中的更改。
-ValueListenableProvider
+                            
+此文章代码描述基于Flutter
+
+让球/大小球-盘口得转换
+大小球的盘口仅用/表示，没有前缀；
+亚赔的盘口一般都是/表示，类似-2/2.5或+2/2.5；
+亚赔的盘口前缀也会有不同，常见让为-，受让为+；例如尼日利亚，就跟亚赔表示相反；
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-07-24
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-20
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/blog/categories/Flutter/" class="post-category">
-                                    Flutter
+                            <a href="/blog/categories/%E8%B5%94%E7%8E%87/" class="post-category">
+                                    赔率
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/blog/tags/Provider/">
-                        <span class="chip bg-color">Provider</span>
+                    <a href="/blog/tags/%E8%B5%94%E7%8E%87-%E6%98%BE%E7%A4%BA%E7%9B%98-%E7%8E%A9%E6%B3%95/">
+                        <span class="chip bg-color">赔率-显示盘/玩法</span>
                     </a>
                     
                 </div>
